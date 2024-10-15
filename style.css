@@ -1,0 +1,182 @@
+.just-another-hand-regular {
+  font-family: "Just Another Hand", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* body {
+  margin: 0px;
+} */
+
+body {
+  margin: 0;
+  /* padding: 0; */
+  
+  height: 100vh;
+  background-color: white; /* Background color */
+  /* background-image: 
+      linear-gradient(0deg, rgba(255, 1, 1, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 4, 0, 0.2) 1px, transparent 1px);
+  background-size: 40px 40px;  */
+
+  /* animation: bg_alert 2s ease-in-out infinite; */
+}
+
+@keyframes bg_alert {
+  0% {
+    background-image: 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.0) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.0) 1px, transparent 1px);
+  }
+  50% {
+    background-image: 
+    linear-gradient(0deg, rgba(0, 0, 0, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.10) 1px, transparent 1px);
+  }
+  100% {
+    background-image: 
+    linear-gradient(0deg, rgba(255, 1, 1, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 4, 0, 0.5) 1px, transparent 1px);
+  }
+}
+
+
+
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative; 
+  top: 250px;
+
+  padding: 10px;
+  margin-right: 100px;
+  
+}
+#TypeBox {
+  display: flex;
+  /* position: relative; */
+  /* top: 250px; */
+  border: 2px solid black;
+
+  /* add drop shadow */
+  box-shadow: 0px 4px 18px #888888;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 96px;
+
+  padding: 40px;
+  margin: 20px auto;
+
+  /* height: 180px; */
+  background-color: white;
+  max-width: 1565px;
+}
+.panel {
+  /* 1 px border black color */
+  border: 1px solid black;
+  background-color: #f4f4f4;
+  padding: 10px;
+  opacity: 60%;
+}
+
+#topPanel {
+  display: flex;
+  flex-direction: row;
+
+  height: 156px;
+  width: 0;
+
+  position: fixed; /* sidebar stays on the right side */
+  left: 0; /* position it to the right edge */
+  top: 0; /* start at the top */
+  animation: expandWidth 2s forwards; /* Animation to expand width */
+}
+/* Keyframes to animate width from 0% to 100% */
+@keyframes expandWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+#rightPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* start at the top */
+  align-items: flex-end; /* content aligned to the right */
+
+  position: fixed; /* sidebar stays on the right side */
+  right: 0; /* position it to the right edge */
+  top: 0; /* start at the top */
+
+  width: 178px;
+  height: 0; /* full height of the viewport */
+  animation: expandHeight 2s forwards; /* Animation to expand width */
+
+}
+
+/* Keyframes to animate width from 0% to 100% */
+@keyframes expandHeight {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+
+
+#TypeBox:after {
+  content: "_";
+  animation: blink 0.8s linear infinite; /* Use step-end for precise blinking */
+  /* color: red; Set a default color */
+}
+
+/* Blink animation */
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+        color: white; /* Invisible and white at the start and end */
+    }
+    50% {
+        opacity: 1;
+        color: rgb(130, 130, 130); /* Fully visible and red at the midpoint */
+    }
+}
+#svg-container {
+  margin-top: 270px;
+  position: relative;
+  display: inline-block;
+
+  opacity: 0;
+  
+  transition: opacity 2s ease;
+}
+
+#arrow {
+  position: relative;
+  width: 190px;
+  /* background-color: white; */
+}
+
+/* Circular blur background */
+#svg-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px; /* Adjust size to suit the SVG */
+  height: 270px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  filter: blur(10px); /* Apply the blur effect */
+  z-index: -1; /* Send the circle behind the SVG */
+}
