@@ -1,20 +1,18 @@
 
 // Call the IP geolocation API
-
-var user_country;
 var user_geoinfo;
 function get_location() {
-  fetch("https://ipinfo.io/json")
+  fetch("https://api.ipgeolocation.io/ipgeo?apiKey=4c80968bd91f41afb52cbdf1a5d53733")
     .then((response) => response.json())
     .then((data) => {
-      console.log("Country:", data);
+      console.log("Geolocation Info:", data);
       user_geoinfo = data;
     })
     .catch((error) => {
       console.error("Error fetching location:", error);
     });
 }
-get_location();
+// get_location();
 
 // change opacity of arrow id element to 1 after 10 sec
 setTimeout(() => document.getElementById("svg-container").style.opacity = "1", 8000)
