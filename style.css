@@ -68,7 +68,7 @@ body {
   border: 2px solid black;
 
   /* add drop shadow */
-  box-shadow: 0px 4px 18px #888888;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, .25);;
 
   justify-content: center;
   align-items: center;
@@ -102,6 +102,18 @@ body {
   top: 0; /* start at the top */
   animation: expandWidth 2s forwards; /* Animation to expand width */
 }
+
+
+.random-text {
+  position: absolute; /* Absolute positioning inside topPanel */
+  padding: 5px;
+  /* background-color: white;
+  border: 1px solid black; */
+  font-size: 32px;
+  transition: transform 0.3s ease; /* For smooth animation */
+}
+
+
 /* Keyframes to animate width from 0% to 100% */
 @keyframes expandWidth {
   0% {
@@ -221,7 +233,7 @@ body {
   border: none;
   border-radius: 8px;
   z-index: 2;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 #surprise1 {

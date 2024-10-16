@@ -4,7 +4,7 @@ let typingTimeout; // Store the timeout ID for clearing typing
 
 const typingSpeed = 50; // Base typing speed in ms
 
-function say(text) {
+function say(text, onfinish) {
   // Clear previous typing if already in progress
   if (isTyping) {
     clearTyping(); // Clear current typing
@@ -34,6 +34,7 @@ function say(text) {
       
     } else {
       isTyping = false; // Reset typing flag when done
+      if (onfinish) {onfinish();}
     }
   };
 
@@ -54,17 +55,27 @@ function greeting() {
   console.log("Running greeting function:", user_geoinfo);
 
   if (user_geoinfo == undefined) {
-    say("Hi, I’m Pratham Chauhan from India");
-    return;
+    say("Hi, I’m Pratham Chauhan from India, btw you are from India too?!");
   }
-  if (user_geoinfo.country_name == "India") {
-    say(`Hi, I’m Pratham Chauhan from India, and you are from ${user_geoinfo.country_name} too`);
+  else if (user_geoinfo.country_name == "India") {
+    say(`Hi, I’m Pratham Chauhan from India, btw you are from ${user_geoinfo.country_name} too!`);// ,() => say("Halo then")
   }
   else {
-    say(`Hi, I’m Pratham Chauhan from India, and you are from ${user_geoinfo.country_name}`);
+    say(`Hi, I’m Pratham Chauhan from India, btw you are from ${user_geoinfo.country_name}`);
   }
+
+  // change opacity of arrow id element to 1 after 10 sec
+  setTimeout(() => document.getElementById("svg-container").style.opacity = "1", 5500)
+
 }
 
 // greeting()
 // I got your geolocation from your ip address
 // setTimeout(greeting, 2000);
+
+
+// Add event listener for hover
+document.getElementById('who_are_you').addEventListener('mouseenter', () => say("I know you have questions about me"));
+document.getElementById('connect_bt').addEventListener('mouseenter', () => say("Sure, Let's connect!"));
+document.getElementById('surprise1').addEventListener('mouseenter', () => say("Do you wanna play a game?"));
+document.getElementById('surprise2').addEventListener('mouseenter', () => say("..."));
