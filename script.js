@@ -15,9 +15,6 @@ function get_location() {
 }
 // get_location();
 
-// change opacity of arrow id element to 1 after 10 sec
-setTimeout(() => document.getElementById("svg-container").style.opacity = "1", 8000)
-
 function add_grid() {
   const body = document.getElementsByTagName('body')[0];
 
@@ -27,6 +24,28 @@ function add_grid() {
   body.style.backgroundSize = '40px 40px';
 }
 
-add_grid();
 
+// change opacity of arrow id element to 1 after 10 sec
+setTimeout(() => document.getElementById("svg-container").style.opacity = "1", 8000)
+
+document.getElementById('svg-container').addEventListener('click', function() {
+  // Fade out the container
+  var container = document.getElementById("svg-container")
+  container.style.transition = "opacity 0.6s ease";
+  container.style.opacity = "0";
+
+  // Wait for the opacity transition to finish, then remove the element from the DOM
+  setTimeout(() => {
+      this.remove();
+  }, 900); // Matches the 0.8s transition duration in CSS
+
+  document.getElementById("TypeBox").innerHTML = ""; 
+
+  // hide grid
+  document.body.style.backgroundImage = "none";
+});
+
+
+
+add_grid();
 // setTimeout(add_grid, 8000)

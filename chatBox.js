@@ -14,13 +14,12 @@ function say(text) {
   const elem = document.getElementById("TypeBox");
   elem.innerHTML = ""; // Clear text box for new message
   Charindex = 0; // Reset index for new text
-
+  
   const typeNextCharacter = () => {
     // Check if typing should continue
     // if (!isTyping) {
     //     return; // Exit if isTyping is false
     // }
-
     if (Charindex < text.length) {
       elem.innerHTML += text[Charindex]; // Add the next character
       Charindex++; // Move to the next character
@@ -43,6 +42,7 @@ function say(text) {
 
 function clearTyping() {
   // If a typing process is in progress, clear the text field
+  console.log('Clearing typing...');
   if (isTyping) {
     isTyping = false; // Reset the typing flag
     clearTimeout(typingTimeout); // Clear any active typing timeout
@@ -51,10 +51,11 @@ function clearTyping() {
 }
 
 function greeting() {
-  // console.log(user_geoinfo.country_name);
-  
+  // console.log(user_geoinfo);
+
   if (user_geoinfo == undefined) {
     say("Hi, I’m Pratham Chauhan from India");
+    return;
   }
   if (user_geoinfo.country_name == "India") {
     say(`Hi, I’m Pratham Chauhan from India, and you are from ${user_geoinfo.country_name} too`);
@@ -64,4 +65,6 @@ function greeting() {
   }
 }
 
+// greeting()
+// I got your geolocation from your ip address
 setTimeout(greeting, 2000);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,43 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400..700&display=swap" rel="stylesheet">
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
 
     <title>My Portfolio</title>
-    
+
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
-    <!-- <h2 id="country">Detecting your country...</h2> -->
     <div class="panel" id="topPanel"></div>
-    
+    <div class="panel" id="rightPanel"></div>
+
     <div id="container">
         <div id="TypeBox" class="just-another-hand-regular">
-            <!-- text field -->    
+            <!-- text field -->
         </div>
 
         <div id="svg-container">
-        <img src="Arrow-40.svg" id="arrow" alt="Next" />
+            <img src="Arrow-40.svg" id="arrow" alt="Next" />
         </div>
 
     </div>
-    <div class="panel" id="rightPanel"></div>
 
+    <div class="button-container">
+        <button class="btn inner-shadow kameron-font" style="color: #C03434;">Who are you?</button>
+        <button class="btn inner-shadow kameron-font">I want you to connect <b>Right Now!</b></button>
+        <button id="surprise1" class="btn drop-shadow kameron-font">Surpise!</button>
+        <button id="surprise2" class="btn drop-shadow kameron-font">Surpise!</button>
+    </div>
+    
     <script src="script.js"></script>
     <script src="chatBox.js"></script>
     <script src="floating_bg.js"></script>
 </body>
+
 </html>

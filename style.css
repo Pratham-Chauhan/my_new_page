@@ -4,6 +4,12 @@
   font-style: normal;
 }
 
+.kameron-font {
+  font-family: "Kameron", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
 /* body {
   margin: 0px;
 } */
@@ -91,7 +97,7 @@ body {
   height: 156px;
   width: 0;
 
-  position: fixed; /* sidebar stays on the right side */
+  position: absolute; /* sidebar stays on the right side */
   left: 0; /* position it to the right edge */
   top: 0; /* start at the top */
   animation: expandWidth 2s forwards; /* Animation to expand width */
@@ -156,7 +162,6 @@ body {
   display: inline-block;
 
   opacity: 0;
-  
   transition: opacity 2s ease;
 }
 
@@ -164,6 +169,10 @@ body {
   position: relative;
   width: 190px;
   /* background-color: white; */
+  transition: transform 0.3s ease;
+}
+#arrow:hover {
+  transform: scale(0.9); /* Scale the image to 120% on hover */
 }
 
 /* Circular blur background */
@@ -180,3 +189,62 @@ body {
   filter: blur(10px); /* Apply the blur effect */
   z-index: -1; /* Send the circle behind the SVG */
 }
+
+
+/* Container with flexbox */
+.button-container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between; /* Distribute buttons evenly */
+  gap: 100px; /* Optional spacing between buttons */
+  
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 20px; /* Optional padding */
+  justify-content: center;
+}
+
+.btn {
+  /* width: 340px; */
+  /* height: 60px; */
+  width: 352px;
+  min-height: 60px;
+  /* height: fit-content; */
+
+  font-size: 32px;
+  
+  padding: 8px;
+  padding-left: 12px;
+  padding-right: 12px;
+  
+  border: none;
+  border-radius: 8px;
+  z-index: 2;
+  /* cursor: pointer; */
+}
+
+#surprise1 {
+ color: #EFF5D7;
+}
+
+#surprise2 {
+  color: #D7F5F3;
+}
+/* Left two buttons with inner shadow and white background */
+.inner-shadow {
+  background-color: #F9F9F9;
+  
+  box-shadow: inset 0px 4px 13px rgba(0, 0, 0, 0.25); /* Inner shadow */
+  /* color: black; */
+}
+
+/* Right two buttons with drop shadow and black background */
+.drop-shadow {
+  background-color: #3B3B3B;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5); /* Drop shadow */
+
+  color: white;
+}
+
+
