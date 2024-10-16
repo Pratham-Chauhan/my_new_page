@@ -51,7 +51,7 @@ function clearTyping() {
 }
 
 function greeting() {
-  // console.log(user_geoinfo);
+  console.log("Running greeting function:", user_geoinfo);
 
   if (user_geoinfo == undefined) {
     say("Hi, I’m Pratham Chauhan from India");

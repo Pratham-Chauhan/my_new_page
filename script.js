@@ -11,7 +11,7 @@ function get_location() {
       console.log("Geolocation Info:", data);
       user_geoinfo = data;
 
-      setTimeout(greeting, 1800);
+      setTimeout(greeting, 10);
     })
     .catch((error) => {
       console.error("Error fetching location:", error);
