@@ -67,4 +67,4 @@ function greeting() {
 
 // greeting()
 // I got your geolocation from your ip address
-setTimeout(greeting, 2000);
+// setTimeout(greeting, 2000);

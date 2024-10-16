@@ -3,17 +3,25 @@
 var user_geoinfo;
 var apiKey = "4c80968bd91f41afb52cbdf1a5d53733"
 function get_location() {
+  console.log("Fetching location info...");
+
   fetch("https://api.ipgeolocation.io/ipgeo?apiKey=" + apiKey)
     .then((response) => response.json())
     .then((data) => {
       console.log("Geolocation Info:", data);
       user_geoinfo = data;
+
+      setTimeout(greeting, 1800);
     })
     .catch((error) => {
       console.error("Error fetching location:", error);
     });
 }
-get_location();
+// Call the function when the page loads
+window.onload = function() {
+    get_location(); 
+};
+// get_location();
 
 function add_grid() {
   const body = document.getElementsByTagName('body')[0];
