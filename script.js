@@ -8,10 +8,10 @@ function get_location() {
   fetch("https://api.ipgeolocation.io/ipgeo?apiKey=" + apiKey)
     .then((response) => response.json())
     .then((data) => {
-      console.log("Geolocation Info:", data);
+      // console.log("Geolocation Info:", data);
       user_geoinfo = data;
 
-      setTimeout(greeting, 10);
+      setTimeout(greeting, 1800);
     })
     .catch((error) => {
       console.error("Error fetching location:", error);
