@@ -50,5 +50,18 @@ function clearTyping() {
   }
 }
 
+function greeting() {
+  // console.log(user_geoinfo.country_name);
+  
+  if (user_geoinfo == undefined) {
+    say("Hi, I’m Pratham Chauhan from India");
+  }
+  if (user_geoinfo.country_name == "India") {
+    say(`Hi, I’m Pratham Chauhan from India, and you are from ${user_geoinfo.country_name} too`);
+  }
+  else {
+    say(`Hi, I’m Pratham Chauhan from India, and you are from ${user_geoinfo.country_name}`);
+  }
+}
 
-setTimeout(() => say("Hi, I’m Pratham Chauhan from India, and you are from India too"), 2000);
+setTimeout(greeting, 2000);

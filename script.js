@@ -1,8 +1,9 @@
 
 // Call the IP geolocation API
 var user_geoinfo;
+var apiKey = "4c80968bd91f41afb52cbdf1a5d53733"
 function get_location() {
-  fetch("https://api.ipgeolocation.io/ipgeo?apiKey=4c80968bd91f41afb52cbdf1a5d53733")
+  fetch("https://api.ipgeolocation.io/ipgeo?apiKey=" + apiKey)
     .then((response) => response.json())
     .then((data) => {
       console.log("Geolocation Info:", data);
@@ -26,6 +27,6 @@ function add_grid() {
   body.style.backgroundSize = '40px 40px';
 }
 
-// add_grid();
+add_grid();
 
 // setTimeout(add_grid, 8000)
