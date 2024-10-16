@@ -13,7 +13,7 @@ function get_location() {
       console.error("Error fetching location:", error);
     });
 }
-// get_location();
+get_location();
 
 function add_grid() {
   const body = document.getElementsByTagName('body')[0];
